@@ -4,6 +4,17 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto';
+  min-height: 100vh;
+}
+
+body {
+  /* Menu space */
+  padding-left: 80px;
+  background-image: linear-gradient(rgb(167, 1, 167), rgb(78, 0, 78));
+  background-image: linear-gradient(rgb(41, 144, 233), rgb(0, 38, 89));
+  height: 100%;
+  position: relative;
 }
 
 a {
