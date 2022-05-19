@@ -33,7 +33,7 @@ const Container = styled.div`
 
 		ul {
 			margin: 40px auto;
-			width: 600px;
+			max-width: 600px;
 			
 			li {
 				text-align: left;
