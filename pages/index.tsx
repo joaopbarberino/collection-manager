@@ -13,13 +13,19 @@ const Home: NextPage = () => {
 			</Head>
 			<Menu />
 
-			<div className='info amazon-link'>
+			<div className='info'>
 				<p>Como participante do Programa de Associados da Amazon, sou remunerado pelas compras qualificadas efetuadas.</p>
-				<a target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=collectionman-20&linkCode=ur2&linkId=b6539a615aaec10360f8b80efae810c5&camp=1789&creative=9325&node=7842710011"><LinkIcon />Mangás e HQs mais vendidos!!!</a>
+				<a
+					target='_blank'
+					rel='noreferrer'
+					href='https://www.amazon.com.br/b?_encoding=UTF8&tag=collectionman-20&linkCode=ur2&linkId=b6539a615aaec10360f8b80efae810c5&camp=1789&creative=9325&node=7842710011'>
+					<LinkIcon />
+					Mangás e HQs mais vendidos!!!
+				</a>
 			</div>
 
 			<div className='info'>
-				<p>
+				<div>
 					Bem-vindo ao My Bookcase, um app para organizar sua coleção de comics e mangás!
 					Ainda em desenvolvimento, quando pronto você poderá:
 					<ul>
@@ -28,7 +34,7 @@ const Home: NextPage = () => {
 						<li>Checar o preço de capa na Amazon e anotar o quanto você pagou para manter noção de gastos;</li>
 						<li>Organizar uma lista de desejos para definir suas próximas compras!</li>
 					</ul>
-				</p>
+				</div>
 			</div>
 
 
