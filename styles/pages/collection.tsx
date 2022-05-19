@@ -4,7 +4,12 @@ const Container = styled.div`
     min-height: 100vh;
 	height: 100%;
     width: 100%;
-	`;
+
+	.amazon-link {
+		padding: 20px;
+		margin: 10px;
+	}
+`;
 
 const Section = styled.div`
 	height: 100%;

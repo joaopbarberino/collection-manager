@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
                 {open ? <ArrowBackIosNewIcon /> : <ArrowForwardIosIcon />}
             </Button>
 
-            <Link href={'/teste'}>
+            <Link href={'/collection'}>
                 <div className='menu-item'>
                     <AddIcon className='icon' />
 

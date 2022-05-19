@@ -47,7 +47,6 @@ const MenuContainer = styled.div<IMenuContainerProps>`
         right: -16px;
         top: 107px;
 
-
         svg {
             font-size: 16px;
         }
