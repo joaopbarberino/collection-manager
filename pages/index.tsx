@@ -1,29 +1,11 @@
 import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import { Container, Section } from '../styles/pages/home';
+import { Container } from '../styles/pages/home';
 import Menu from '../src/components/Menu';
-import { Grid } from '@mui/material';
 import LinkIcon from '@mui/icons-material/Link';
-import CollectionCard from '../src/components/CollectionCard';
-import apiMangaDex from '../src/services/apiMangaDex';
-import googleBooksApi from '../src/services/googleBooksApi';
-import axios from 'axios';
 
 const Home: NextPage = () => {
-	console.log()
-
-	useEffect(() => {
-		// googleBooksApi.get('/volumes?q=isbn:9781974728992&API_KEY=AIzaSyBEMhruQxriRCOvECoLKppZ7TJGQrMXGyA', {
-		// params: {
-		// 	q: 'isbn:9786559605392',9781974727100
-		// 	maxResults: 30,
-		// }
-		// }).then(response => console.log(response));
-
-	}, []);
-
 	return (
 		<Container>
 			<Head>
