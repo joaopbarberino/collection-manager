@@ -1,0 +1,34 @@
+datasource db {
+  provider             = "mysql"
+  url                  = env("PLANETSCALE_PRISMA_DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+model BookCollection {
+  id            Int      @id @default(autoincrement())
+  name          String   @db.VarChar(255)
+  coverImageUrl String   @db.VarChar(255)
+  totalVolumes  Int
+  books         Book[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Book {
+  id               Int            @id @default(autoincrement())
+  BookCollection   BookCollection @relation(fields: [bookCollectionId], references: [id])
+  bookCollectionId Int
+  name             String         @db.VarChar(255)
+  coverImageUrl    String         @db.VarChar(255)
+  have             Boolean        @default(false)
+  read             Boolean        @default(false)
+  price            String         @db.VarChar(4)
+  paidPrice        String         @db.VarChar(4)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+}
