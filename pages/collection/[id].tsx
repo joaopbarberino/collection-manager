@@ -44,7 +44,7 @@ const Collection: React.FC = () => {
                     </Grid>
 
                     <Grid container className='cards-container'>
-                        <ul>
+                        <ul style={{ width: '100%' }}>
                             {
                                 books && books.map((book, i) =>
                                     <Grid key={i} item xs={12} sm={6} md={4} lg={3} xl={2}>

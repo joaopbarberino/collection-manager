@@ -37,7 +37,7 @@ const Collection: React.FC = () => {
                     <Grid container className='cards-container'>
                         {
                             collections && collections.map((collection, i) =>
-                                <Link href={`/collection/${collection.id}`}>
+                                <Link key={i} href={`/collection/${collection.id}`}>
                                     <Grid key={i} item xs={12} sm={6} md={4} lg={3} xl={2}>
                                         <CollectionCard collection={collection} />
                                     </Grid>
