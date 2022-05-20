@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
 import { AppProvider } from '../src/services/AppContext';
+import Menu from '../src/components/Menu';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -22,6 +23,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <AppProvider value={{ isMobile, menuOpen, setMenuOpen }}>
+      <Menu />
       <Component {...pageProps} />
     </AppProvider>
   );

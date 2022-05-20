@@ -7,13 +7,26 @@ interface IBookResponse {
     error?: string;
 }
 
+interface IQueryParams {
+    collectionId: string;
+    [key: string]: string | string[];
+}
+
 const handler = async (req: NextApiRequest, res: NextApiResponse<IBookResponse>) => {
     const { method } = req;
+    const { collectionId } = req.query as IQueryParams;
 
     switch (method) {
         case 'GET':
             try {
-                const books = await prisma.book.findMany();
+                let books: Book[];
+
+                if (collectionId) {
+                    books = await prisma.book.findMany({ where: { bookCollectionId: parseInt(collectionId) } })
+                } else {
+                    books = await prisma.book.findMany();
+                }
+
                 res.status(200).json({ books });
 
             } catch (e) {

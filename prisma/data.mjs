@@ -7,7 +7,7 @@ export const BookCollection = [
     {
         name: 'My Hero Academia',
         coverImageUrl: 'https://images-na.ssl-images-amazon.com/images/I/71bELfIWTDL.jpg',
-        totalVolumes: 23,
+        totalVolumes: 32,
     },
     {
         name: 'Demon Slayer',

@@ -1,8 +1,6 @@
-import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Container } from '../styles/pages/home';
-import Menu from '../src/components/Menu';
 import LinkIcon from '@mui/icons-material/Link';
 
 const Home: NextPage = () => {
@@ -11,7 +9,6 @@ const Home: NextPage = () => {
 			<Head>
 				<title>Home</title>
 			</Head>
-			<Menu />
 
 			<div className='info'>
 				<p>Como participante do Programa de Associados da Amazon, sou remunerado pelas compras qualificadas efetuadas.</p>
