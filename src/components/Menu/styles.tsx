@@ -40,7 +40,7 @@ const MenuContainer = styled.div<IMenuContainerProps>`
 
     .toggle-button {
         min-width: unset;
-        width: 31px;
+        width: 30px;
         height: 30px;
         padding-right: ${props => props.open ? '10px' : '6px'};
         border-radius: 50%;
@@ -48,7 +48,7 @@ const MenuContainer = styled.div<IMenuContainerProps>`
         background-color: rgb(0, 38, 89);
         position: absolute;
         right: -16px;
-        top: 107px;
+        top: 109px;
 
         svg {
             font-size: 16px;
@@ -95,9 +95,10 @@ const MenuContainer = styled.div<IMenuContainerProps>`
         box-shadow: none;
 
         .toggle-button {
-            left: 50%;
+            right: unset;
             top: 80px;
-            transform: rotate(90deg);
+            transform: rotate(90deg) translate(0%, -50%);
+
         }
 
         .menu-item {
