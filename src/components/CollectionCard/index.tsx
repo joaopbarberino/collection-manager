@@ -30,8 +30,8 @@ const CollectionCard: React.FC<ICollectionCardProps> = ({ manga }) => {
                         </div>
 
                         <div className='counters'>
-                            <h5><LibraryBooksIcon /> HAVE 18/23</h5>
-                            <h5><TrendingUpIcon /> READ 5/23</h5>
+                            <h5><LibraryBooksIcon /> TEM 18 DE 23</h5>
+                            <h5><TrendingUpIcon /> LEU 5 DE 23</h5>
                         </div>
                     </div>
                 </Grid>

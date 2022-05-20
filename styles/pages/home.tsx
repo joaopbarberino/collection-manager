@@ -7,8 +7,10 @@ const Container = styled.div`
 	padding: 20px;
 
 	.info {
+		max-width: 900px;
+		width: 100%;
 		padding: 20px;
-		margin: 0 20px 20px;
+		margin: 20px auto;
 		border-radius: 10px;
 		background-color: rgba(255, 255, 255, 0.4);
 		text-align: center;

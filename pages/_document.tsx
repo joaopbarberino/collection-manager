@@ -6,14 +6,15 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link
-                        rel="stylesheet"
-                        href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap"
+                        rel='stylesheet'
+                        href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap'
                     />
                     <link
-                        rel="stylesheet"
-                        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                        rel='stylesheet'
+                        href='https://fonts.googleapis.com/icon?family=Material+Icons'
                     />
-                    <link rel="icon" href="/favicon.ico" />
+                    <link href='https://fonts.googleapis.com/css?family=Quicksand:100,300,400,500,700&display=swap' rel='stylesheet' />
+                    <link rel='icon' href='/favicon.ico' />
                 </Head>
                 <body>
                     <Main />

@@ -30,11 +30,14 @@ const MenuContainer = styled.div<IMenuContainerProps>`
 
         &:hover {
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
         }
    
     }
     
+    .MuiCollapse-root {
+        width: 100%;
+    }
+
     .toggle-button {
         min-width: unset;
         width: 31px;
@@ -64,11 +67,13 @@ const MenuContainer = styled.div<IMenuContainerProps>`
         transition: all .2s;
 
         h3 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            font-weight: 400;
             color: white;
         }
 
-        .icon {
+        svg {
             width: 50px;
             height: 50px;
             margin-right: 25px;
@@ -77,7 +82,26 @@ const MenuContainer = styled.div<IMenuContainerProps>`
         &:hover:not(.header) {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            margin: 15px; 
+            margin: 15px 0; 
+        }
+    }
+
+    @media (max-width: 768px) {
+        height: ${props => props.open ? '100%' : '96px'};
+        width: 100%;
+        min-height: unset;
+        background-image: none;
+        background-color: rgb(41, 144, 233);
+        box-shadow: none;
+
+        .toggle-button {
+            left: 50%;
+            top: 80px;
+            transform: rotate(90deg);
+        }
+
+        .menu-item {
+            justify-content: center;
         }
     }
 `;

@@ -1,41 +1,36 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import AddIcon from '@mui/icons-material/Add';
-import MenuContainer from './styles';
 import { Button, Fade } from '@mui/material';
+import MenuContainer from './styles';
+import AppContext from '../../services/AppContext';
+import MenuItem from './MenuItem';
 
 const Menu: React.FC = () => {
-    // TODO controlar open pelo context pra não trocar de estado na troca de página
-    const [open, setOpen] = useState(false);
+    const { isMobile, menuOpen, setMenuOpen } = useContext(AppContext);
 
     return (
-        <MenuContainer open={open}>
+        <MenuContainer open={menuOpen}>
             <Link href={'/'}>
-                <div className='header menu-item'>
+                <div className='header menu-item' onClick={() => isMobile ? setMenuOpen(false) : null}>
                     <MenuBookIcon className='icon' />
 
-                    <Fade in={open}>
+                    <Fade in={menuOpen || isMobile}>
                         <h2>My Bookcase</h2>
                     </Fade>
                 </div>
             </Link>
 
-            <Button className='toggle-button' onClick={() => setOpen(!open)}>
-                {open ? <ArrowBackIosNewIcon /> : <ArrowForwardIosIcon />}
+            <Button className='toggle-button' onClick={() => setMenuOpen(!menuOpen)}>
+                {menuOpen ? <ArrowBackIosNewIcon /> : <ArrowForwardIosIcon />}
             </Button>
 
-            <Link href={'/collection'}>
-                <div className='menu-item'>
-                    <AddIcon className='icon' />
+            <MenuItem to='/collection' icon={<AddIcon />} >Coleção</MenuItem>
 
-                    <Fade in={open}>
-                        <h3>Insert</h3>
-                    </Fade>
-                </div>
-            </Link>
+
         </MenuContainer>
     );
 };

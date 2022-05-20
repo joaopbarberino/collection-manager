@@ -12,7 +12,7 @@ const Teste: React.FC = () => {
 
                 <Grid container >
                     <Grid item xs={12} className='title'>
-                        <h2>Mangas</h2>
+                        <h2>Mangás</h2>
                     </Grid>
 
                     <Grid container className='cards-container'>
