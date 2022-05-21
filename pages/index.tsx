@@ -28,7 +28,7 @@ const Home: NextPage = () => {
 					<ul>
 						<li>Pesquisar, registrar e separar por coleções os seus volumes;</li>
 						<li>Marcar quais volumes foram lidos;</li>
-						<li>Checar o preço de capa na Amazon e anotar o quanto você pagou para manter noção de gastos;</li>
+						<li>Checar o preço de capa na Amazon e anotar o quanto você pagou, lá ou em outro lugar, para manter noção de gastos;</li>
 						<li>Organizar uma lista de desejos para definir suas próximas compras!</li>
 					</ul>
 				</div>

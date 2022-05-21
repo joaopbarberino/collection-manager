@@ -2,12 +2,12 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { BookCollection } from '@prisma/client';
 import prisma from '../../lib/prisma';
 
-interface IBookCollection {
+interface IBookCollectionsResponse {
     bookCollections: BookCollection[];
     error?: string;
 }
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<IBookCollection>) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<IBookCollectionsResponse>) => {
     const { method } = req;
 
     switch (method) {

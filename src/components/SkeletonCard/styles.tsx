@@ -26,7 +26,7 @@ const Container = styled.div`
         color: white;
         display: grid;
 
-        .title {
+        .card-title {
             background: initial;
             border-bottom: 2px solid rgba(0, 0, 0, 0.2);
             padding: 20px 15px;

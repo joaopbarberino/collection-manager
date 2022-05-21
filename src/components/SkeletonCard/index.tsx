@@ -2,7 +2,11 @@ import React from 'react';
 import Container from './styles';
 import { Skeleton } from '@mui/material';
 
-const SkeletonCard: React.FC = () => {
+interface ISkeletonCardProps {
+    counterNumber: number;
+}
+
+const SkeletonCard: React.FC<ISkeletonCardProps> = ({ counterNumber }) => {
     return (
         <Container>
             <div className='image'>
@@ -10,13 +14,14 @@ const SkeletonCard: React.FC = () => {
             </div>
 
             <div className='info'>
-                <div className='title'>
+                <div className='card-title'>
                     <Skeleton><h3>My Hero Academia</h3></Skeleton>
                 </div>
 
                 <div className='counters'>
-                    <Skeleton height='18px' />
-                    <Skeleton height='18px' />
+                    {Array.from(Array(counterNumber).keys()).map((x, i) =>
+                        <Skeleton key={i} height='18px' />
+                    )}
                 </div>
             </div>
         </Container >

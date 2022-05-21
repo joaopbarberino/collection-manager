@@ -34,7 +34,7 @@ const Container = styled.div`
             
             h3 {
                 margin: 0;
-                font-weight: 500;
+                font-weight: 300;
                 font-size: 1.3rem;
             }
         }
@@ -60,6 +60,10 @@ const Container = styled.div`
 
                 &.done {
 				    color: #00e200;
+                }
+                
+                &.missing {
+                    color: #c00000;
                 }
             }
         }

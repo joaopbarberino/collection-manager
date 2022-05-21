@@ -97,8 +97,7 @@ const MenuContainer = styled.div<IMenuContainerProps>`
         .toggle-button {
             right: unset;
             top: 80px;
-            transform: rotate(90deg) translate(0%, -50%);
-
+            transform: rotate(90deg);
         }
 
         .menu-item {

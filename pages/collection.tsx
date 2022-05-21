@@ -49,7 +49,6 @@ const Collection: React.FC = () => {
     return (
         <Container>
             <Section>
-
                 <Grid container>
                     <Grid item xs={12} className='title'>
                         <h2>Mangás</h2>
@@ -62,7 +61,7 @@ const Collection: React.FC = () => {
                                 {
                                     [1, 2, 3, 4].map(x =>
                                         <Grid key={x} item xs={12} sm={6} md={4} lg={3} xl={2.4}>
-                                            <SkeletonCard />
+                                            <SkeletonCard counterNumber={2} />
                                         </Grid>
                                     )
                                 }
@@ -88,27 +87,7 @@ const Collection: React.FC = () => {
                     </Grid>
                 </Grid>
             </Section>
-
-            {/* <Section>
-                <Grid container >
-                    <Grid item xs={12} className='title'>
-                        <h2>Comics</h2>
-                    </Grid>
-
-                    <Grid container className='cards-container'>
-                        <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-                            <CollectionCard />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-                            <CollectionCard />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-                            <CollectionCard />
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Section> */}
-        </Container>
+        </Container >
     );
 }
 

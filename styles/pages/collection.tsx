@@ -21,18 +21,58 @@ const Section = styled.div`
 	.title {
 		padding-left: 20px;
 		background: rgba(0, 0, 0, 0.3);
+		display: flex;
+		min-height: 70px;
+		align-items: center;
+		word-break: break-word;
 
 		h2 {
-			font-weight: 400;
-			color: white;
+			font-weight: 500;
+			color: white;	
 		}
+		
+		.collection-status {
+			color: white;	
+			margin-left: 20px;
+			display: flex;
+
+			.done {
+				color: #00e200;
+			}
+
+			svg {
+				margin-right: 10px;
+			}
+
+			p {
+				margin-right: 15px;
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		@media (max-width: 768px) {
+			justify-content: center;
+			padding: 20px;
+
+			h2, p {
+				text-align: center;
+			}
+		}
+
+		@media (max-width: 460px) {
+			flex-direction: column;
+			height: auto;
+		}
+
 	} 
 
 	.cards-container {
-		padding-right: 40px;
+		padding: 0 40px 40px 0;
 		margin: auto;
 
 		.message {
+			margin-top: 40px;
 			padding: 30px;
 			background-color: rgba(255, 255, 255, 0.4);
 			text-align: center;
