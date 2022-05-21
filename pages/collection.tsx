@@ -38,7 +38,7 @@ const Collection: React.FC = () => {
 
         if (!loading && !collections && errorMessage) {
             message = <div>
-                <p>Houve um erro ao tentar acessar suas coleções por favor tente novamente mais tarde!</p>
+                <p>Houve um erro ao tentar acessar suas coleções. Por favor tente novamente mais tarde.</p>
                 <p className='error'>Erro: {errorMessage}</p>
             </div>;
         }

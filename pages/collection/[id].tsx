@@ -21,6 +21,7 @@ const ViewCollection: React.FC = () => {
     const [read, setRead] = useState<number>();
     const [collection, setCollection] = useState<BookCollection>();
     const [errorMessage, setErrorMessage] = useState<string | undefined>();
+    const [collectionErrorMessage, setCollectionErrorMessage] = useState<string | undefined>();
     const [loading, setLoading] = useState(true);
 
     const loadBooks = async (collectionId: string) => {
@@ -29,7 +30,7 @@ const ViewCollection: React.FC = () => {
         const response = await getBooksByCollection(collectionId);
 
         if (response instanceof AxiosError) {
-            // setErrorMessage(response.message);
+            setErrorMessage(response.message);
         } else {
             setBooks(response);
         }
@@ -43,7 +44,7 @@ const ViewCollection: React.FC = () => {
         const response = await getBookCollection(id);
 
         if (response instanceof AxiosError) {
-            setErrorMessage(response.message);
+            setCollectionErrorMessage(response.message);
         } else {
             setCollection(response);
         }
@@ -82,7 +83,7 @@ const ViewCollection: React.FC = () => {
 
         if (!loading && !books && errorMessage) {
             message = <div>
-                <p>Houve um erro ao tentar acessar os itens dessa coleção por favor tente novamente mais tarde!</p>
+                <p>Houve um erro ao tentar acessar os itens dessa coleção. Por favor tente novamente mais tarde.</p>
                 <p className='error'>Erro: {errorMessage}</p>
             </div>;
         }
@@ -96,21 +97,34 @@ const ViewCollection: React.FC = () => {
                 <Grid container>
                     <Grid item xs={12} className='title'>
                         {
-                            (collection && have && read) ?
+                            collection ?
                                 <>
                                     <h2>{collection.name}</h2>
                                     <div className='collection-status'>
                                         <p className={have === collection.totalVolumes ? 'done' : ''}>
-                                            {renderIcon('have', have, collection.totalVolumes)} TEM {have} DE {collection.totalVolumes}
+                                            {renderIcon('have', (have || 0), collection.totalVolumes)} TEM {have} DE {collection.totalVolumes}
                                         </p>
                                         <p className={have === collection.totalVolumes ? 'done' : ''}>
-                                            {renderIcon('read', read, collection.totalVolumes)} LEU {read} DE {collection.totalVolumes}
+                                            {renderIcon('read', (read || 0), collection.totalVolumes)} LEU {read} DE {collection.totalVolumes}
                                         </p>
                                     </div>
                                 </>
                                 : <Skeleton width={300} height={70} />
                         }
                     </Grid>
+
+                    {
+                        collectionErrorMessage &&
+                        <div className='message'>
+                            <div>
+                                <p>Houve um erro ao tentar acessar os dados dessa coleção. Por favor tente novamente mais tarde.</p>
+                                <p className='error'>Erro: {collectionErrorMessage}</p>
+                            </div>
+                        </div>
+                    }
+                    {
+                        renderMessages()
+                    }
 
                     <Grid container maxWidth='xl' spacing={5} className='cards-container' >
                         {
@@ -129,9 +143,6 @@ const ViewCollection: React.FC = () => {
                                     </div>
                                 </Grid>
                             </>
-                        }
-                        {
-                            renderMessages()
                         }
                         {
                             books && books.map((book, i) =>

@@ -67,23 +67,24 @@ const Section = styled.div`
 
 	} 
 
+	.message {
+		margin: 40px 40px 5px;
+		padding: 30px;
+		background-color: rgba(255, 255, 255, 0.4);
+		text-align: center;
+		width: 100%;
+		border-radius: 10px;
+		font-size: 1.3rem;
+
+		.error {
+			color: #BA000D;
+		}
+	}
+
 	.cards-container {
 		padding: 0 40px 40px 0;
 		margin: auto;
 
-		.message {
-			margin-top: 40px;
-			padding: 30px;
-			background-color: rgba(255, 255, 255, 0.4);
-			text-align: center;
-			width: 100%;
-			border-radius: 10px;
-			font-size: 1.3rem;
-
-			.error {
-				color: #BA000D;
-			}
-		}
 	}
 
 	.progress-container {
