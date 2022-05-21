@@ -13,6 +13,7 @@ const Container = styled.div`
 
 const Section = styled.div`
 	height: 100%;
+
 	&:not(:last-child) {
 		margin-bottom: 60px;
 	}
@@ -28,7 +29,35 @@ const Section = styled.div`
 	} 
 
 	.cards-container {
-		padding: 30px;
+		padding-right: 40px;
+		margin: auto;
+
+		.message {
+			padding: 30px;
+			background-color: rgba(255, 255, 255, 0.4);
+			text-align: center;
+			width: 100%;
+			border-radius: 10px;
+			font-size: 1.3rem;
+
+			.error {
+				color: #BA000D;
+			}
+		}
+	}
+
+	.progress-container {
+		height: 100%;
+		min-height: 350px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
+
+		.MuiCircularProgress-root {
+		    color: rgba(255, 255, 255, 0.6);	
+		}
 	}
 `;
 

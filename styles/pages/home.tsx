@@ -14,7 +14,7 @@ const Container = styled.div`
 		border-radius: 10px;
 		background-color: rgba(255, 255, 255, 0.4);
 		text-align: center;
-		font-size: 1.1rem;
+		font-size: 1.3rem;
 		letter-spacing: 0.2px;
 		color: #000000;
 		

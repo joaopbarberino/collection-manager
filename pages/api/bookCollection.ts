@@ -13,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IBookCollection
     switch (method) {
         case 'GET':
             try {
-                const bookCollections = await prisma.bookCollection.findMany();
+                const bookCollections = await prisma.bookCollection.findMany({ include: { books: { select: { have: true, read: true } } } });
                 res.status(200).json({ bookCollections });
 
             } catch (e) {
