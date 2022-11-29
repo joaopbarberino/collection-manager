@@ -19,7 +19,7 @@ const Container = styled.div`
 		color: #000000;
 		
 		a {
-			color: rgba(41, 144, 233);
+			color: blue;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -30,6 +30,25 @@ const Container = styled.div`
 			
 			&:hover {
 				text-decoration: underline;
+			}
+		}
+
+		.item {
+			display: flex;
+			border: 1px solid rgba(255, 255, 255, 0.4);
+			border-radius: 5px;
+			padding: 10px;
+			margin-bottom: 10px;
+			text-align: left;
+
+			a {
+				width: fit-content;
+			}
+
+			img {
+				height: 200px;
+				object-fit: cover;
+				margin-right: 10px;
 			}
 		}
 
