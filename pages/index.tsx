@@ -75,7 +75,7 @@ const Home: NextPage = () => {
 				<p>Alguns produtos legais na Amazon que podem ser do seu interesse!</p>
 				{
 					items.map(item =>
-						<div className='item'>
+						<div className='item' key={item.link}>
 							<div>
 								<img src={item.imgLink} />
 							</div>
